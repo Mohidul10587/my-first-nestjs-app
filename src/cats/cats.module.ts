@@ -6,7 +6,10 @@ import { CatSchema } from './cat.schema';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/your-database-name', {}),
+    MongooseModule.forRoot(
+      'mongodb+srv://mohid10587:TwhufCSu0zhSDG7U@cluster0.ndnk1mu.mongodb.net/first-nest-app?retryWrites=true&w=majority',
+      {},
+    ),
     MongooseModule.forFeature([{ name: 'Cat', schema: CatSchema }]),
   ],
   controllers: [CatsController],
