@@ -3,13 +3,11 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { CatsController } from './cats.controller';
 import { CatsService } from './cats.service';
 import { CatSchema } from './cat.schema';
+import { DatabaseModule } from 'src/database/database.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://mohid10587:TwhufCSu0zhSDG7U@cluster0.ndnk1mu.mongodb.net/first-nest-app?retryWrites=true&w=majority',
-      {},
-    ),
+    DatabaseModule,
     MongooseModule.forFeature([{ name: 'Cat', schema: CatSchema }]),
   ],
   controllers: [CatsController],
